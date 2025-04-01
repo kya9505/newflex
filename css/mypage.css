@@ -1,224 +1,121 @@
 @import "./global.css";
 
-.mypage-container {
-    max-width: 900px;
-    margin: auto;
-}
-
-/* 프로필 스타일 */
-.profile {
-    display: flex;
+/* 1. 프로필 영역을 조정  */
+.user-componet {
+    padding: 20px 10px;
     flex-direction: column;
-    align-items: center;
-    position: relative;
 }
 
-.profile-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+/* 2. 프로필 이미지 크기 와 위치 
+   3. 프로필 이미지와 텍스트를 스타일링
+   4. 새 프로필의 추가 버튼의 위치와 스타일링
+   5. 전체를 감싸는 태그의 위치를 가운데로 조정
+*/
 
-/* 프로필 이미지 */
-.profile-image {
-    width: 80px;
-    height: 80px;
+.user-componet__profile {
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
 }
 
-/* add-icon 스타일 */
-.add-icon {
-    width: 80px;
-    height: 80px;
+.user-componet__id {
+    padding-top: 5px;
+    font-size: 1rem;
+}
+
+.add-profile-btn {
+
     background-color: gray;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 70px;
+    height: 70px;
+    font-size: 2rem;
+    font-weight: 200;
     color: white;
-    font-size: 50px;
-    position: absolute;
-    top: 0;
-    left: 100%; /* 프로필 사진 오른쪽에 위치 */
-    margin-left: 10px; /* 프로필 사진과 간격 추가 */
 }
 
-/* 서유미 이름 텍스트 */
-.profile-name {
-    margin-top: 10px; /* 프로필 사진과 간격 추가 */
-    font-size: 14px;
-    text-align: center;
+.continue-watching__images img {
+     width: 200px;
+     height: 120px;
+     border-radius: 15px;
+     /* 가로세로 비율을 유지하면서 지정한 크기에 맞춤 */
+     object-fit: cover;
+}
+/* 사진 여백을 조정 */
+.continue-watching {
+    margin-bottom: 25px;
+    padding: 0 20px;
+    padding-bottom: 10px;
 }
 
-/* 새 프로필 텍스트 */
-.new-profile-text {
-    margin-top: 10px; /* 회색 아이콘과 간격 추가 */
-    font-size: 14px;
-    color: #c5c5c5; /* 회색 텍스트 */
-    text-align: center;
+.continue-watching__images {
+    list-style: none;
+    display: flex;
+    overflow: auto;
 }
 
-/* 이어보기 스타일 */
-.continue-movie {
-    margin-bottom: 30px;
-}
+.continue-watching__card {
 
-.section-title {
-    font-size: 18px;
+    background-color: var(--darkpurple);
+    padding: 5px;
+    border-radius: 15px;
+}
+.continue-watching__header {
     margin-bottom: 15px;
 }
 
-.continue-movie-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 15px;
+.continue-watching__images li {
+     margin-left: 5px;
+}
+.continue-watching__title {
+    display: block;
+    margin: 2px 0;
 }
 
-.movie {
-    background-color: #201a30;
-    padding: 10px;
-    border-radius: 10px;
-    text-align: center;
-}
 
-.movie img {
-    width: 100%;
-    height: 120px;
-    border-radius: 10px;
-    object-fit: cover;
-}
-
-/* 찜한 목록 스타일 */
-.wishlist {
-    margin-bottom: 30px;
-}
-
-.wishlist-item {
-    display: flex;
-    align-items: center;
-    background-color: #2a2140;
-    padding: 10px;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    position: relative;
-}
-
-.wishlist-item img {
+.wishlist__img {
     width: 60px;
     height: 60px;
-    border-radius: 10px;
-    object-fit: cover;
-    margin-right: 10px;
-}
-
-.wishlist-info {
-    flex-grow: 1;
-}
-
-.wishlist-title {
-    font-size: 16px;
-    font-weight: bold;
-    display: block;
-}
-
-.wishlist-sub {
-    font-size: 12px;
-    color: #c5c5c5;
-}
-
-.play-icon {
-    font-size: 24px;
-    color: #b3a0ff;
-    cursor: pointer;
-}
-
-/* 검색바 스타일 */
-.find-search-bar-form {
-    padding: 0 25px;
-}
-
-.find-search-bar-form div { 
-    width: 100%;
-}
-
-.find-search-bar {
-    margin-top: 20px;
-    background-color: var(--darkpurple);
-    border-radius: 25px;
-    width: 100%;
-    padding: 10px;
-    color: white;
-    transition: background-color 0.2s ease-in-out;
-}
-
-.find-search-bar:focus {
-    background-color: #594374;
-}
-
-.find-search-bar-form span {
-    position: absolute;
-    font: 1rem;
-    bottom: 0.3rem;
-    right: 40px;
-}
-
-/* 추천 영화 섹션 */
-.best-movie__img-container {
-    padding: 0 20px;
-    margin: 20px 0;
+    border-radius: 20px;
+  }
+  .wishlist__header {
+    border-top: 1px solid var(--border-color);
+    padding-top: 15px;
+    margin-bottom: 10px;
+  }
+  .wishlist-item {
+    margin-bottom: 0.8rem;
     display: flex;
-    justify-content: center;
-}
-
-/* 이미지 사이즈 조정 */
-.best-movie__img {   
-    width: 22rem;
-    height: 12rem;
-    border-radius: 25px;
-}
-
-.best-movie__img-container span {
-    position: absolute;      
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--darkpurple);
+    padding: 7px;
+    border-radius: 15px;
+  }
+  .wishlist-info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-left: 20px;
+  }
+  .wishlist-info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-left: 20px;
+  }
+  .wishlist__title {
+    font-size: 1.2rem;
+  }
+  .wishlist__subtitle {
+    font-size: 0.9rem;
+  }
+  .wishlist-play-btn span {
     background-color: var(--purple);
     border-radius: 50%;
-    left: calc(50% + 5rem);
-    font-size: 5rem;
-    bottom: 3.2rem;
-}
-
-.best-movie__title {
-    padding-left: 25px;
-}
-
-.best-movie__promotion-title {
-    font-size: 14px;
-}
-
-.best-movie__movie-name {
-    color: var(--purple);
-    font-size: 40px;
-    font-weight: 600;
-}
-
-/* 전체를 감싸는 상자의 간격 조정 */
-.movie-recommendation {
-    margin: 25px 0;
-    padding: 0 25px;
-}
-
-.movie-recommendation__imges {
-    margin-top: 20px;
-    list-style: none;    
-    display: flex;
-    overflow: scroll;
-}
-
-.movie-recommendation__imges li {
-    margin-left: 5px;
-}
-
-.movie-recommendation__imges img {
-    width: 150px;
-    border-radius: 20px;
-}
+    opacity: 0.9;
+    font-size: 3rem;
+  }
+  .wishlist {
+    padding: 0 20px 10px 20px;
+  }
+  
